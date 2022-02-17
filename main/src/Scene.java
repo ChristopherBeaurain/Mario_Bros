@@ -1,10 +1,12 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.io.File;
 import java.util.Objects;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
 
 @SuppressWarnings("serial")
 public class Scene extends JPanel {
@@ -17,6 +19,14 @@ public class Scene extends JPanel {
 
     private int xFond1;
 
+    private void createPath(){
+        String filePath = "![](../fondEcran.png)";
+        File file = new File(filePath);
+        String path = file.getPath();
+        System.out.println(path);
+    }
+
+
 
     //**** CONSTRUCTEUR ****//
     public Scene(){
@@ -25,9 +35,9 @@ public class Scene extends JPanel {
 
         this.xFond1 = -50;
 
-        icoFond = new ImageIcon(Objects.requireNonNull(getClass().getResource("../../Images/fondEcran.png")),"Il n'y à pas le fond");
+        icoFond = new ImageIcon(Objects.requireNonNull(getClass().getResource("fondEcran.png")));
         this.imgFond1 = this.icoFond.getImage();
-        icoMario = new ImageIcon(Objects.requireNonNull(getClass().getResource("../../Images/marioMarcheDroite.png")),"Il n'y à pas Mario");
+        icoMario = new ImageIcon(Objects.requireNonNull(getClass().getResource("marioMarcheDroite.png")));
         this.imgMario = this.icoMario.getImage();
     }
 
