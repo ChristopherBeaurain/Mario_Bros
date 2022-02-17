@@ -1,14 +1,24 @@
+
 import javax.swing.JFrame;
 
-public class Main{
-    public static void main(String[] args){
-        JFrame frame = new JFrame("Mario Bros");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(700,360);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setAlwaysOnTop(true);
+public class Main {
 
+    public static Scene scene;
 
+    public static void main(String[] args) {
+
+        // Cr�ation de la fenetre de l'application
+        JFrame fenetre = new JFrame("Mario");
+        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenetre.setSize(700, 360);
+        fenetre.setLocationRelativeTo(null);
+        fenetre.setResizable(false);
+        fenetre.setAlwaysOnTop(true);
+
+        // Instanciation de l'objet scene
+        scene = new Scene();
+
+        fenetre.setContentPane(scene); // On associe la scene à la fenètre de l'application
+        fenetre.setVisible(true);
     }
 }
